@@ -1,0 +1,5 @@
+get_client_booked_room_list:
+    methods:
+        - GET
+    path: /api/clients/booked-rooms
+    controller: Thn\BackendTest\Infrastructure\Delivery\Action\Client\GetRoomBookedListAction

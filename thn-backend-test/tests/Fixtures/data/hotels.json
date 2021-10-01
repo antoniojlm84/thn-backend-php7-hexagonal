@@ -1,0 +1,39 @@
+[
+	{
+		"id":"3457e402-01dd-45e8-b5e4-848243fb01d9",
+		"name":"Hotel 1",
+		"email":"hotel1@hotel1.es",
+		"country": "ES",
+		"phone": "+34667876890",
+		"city": "Madrid",
+		"hotelRoomsData": [
+			"f0278273-2b2d-44ea-a23a-bad5d9db8562",
+			"8c2fc409-012f-41d7-8808-4506f21565bc",
+			"8bcb3af2-8c60-40a5-9473-509230108783",
+			"6dc869f4-4fe4-4969-838d-906863c2ba57"
+		]
+	},
+	{
+		"id":"7daca74c-3a41-46df-86c5-29aa22ccbff3",
+		"name":"Hotel 2",
+		"email":"hotel2@hotel2.es",
+		"country": "CH",
+		"phone": "+86667876890",
+		"city": "Pekin",
+		"hotelRoomsData": [
+			"98371c83-d446-453b-a3b9-2971b1bf366d"
+		]
+	},
+	{
+		"id":"2f58f818-4b19-4b09-a2fd-461987f78151",
+		"name":"Hotel 3",
+		"email":"hotel3@hotel3.es",
+		"country": "US",
+		"phone": "+1667876890",
+		"city": "New York",
+		"hotelRoomsData": [
+			"04430881-2657-4f2f-b52a-15622d95f7ee",
+			"8048ab23-1e83-4e4a-a331-1aab7b7db184"
+		]
+	}
+]

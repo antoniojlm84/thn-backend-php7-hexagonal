@@ -1,0 +1,26 @@
+parameters:
+    header_prefix: 'Bearer'
+    token_ttl: '%lexik_jwt_authentication.token_ttl%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+        bind:
+            $headerPrefix:   '%header_prefix%'
+            $tokenTtl: '%token_ttl%'
+
+    Thn\BackendTest\:
+        autowire: true
+        resource: '../src/*'
+
+    Thn\BackendTest\Infrastructure\Delivery\Action\:
+        resource: '../src/Infrastructure/Delivery/Action/*'
+        tags: [ 'controller.service_arguments' ]
+
+    thn.custom_authenticator:
+        class: Thn\BackendTest\Infrastructure\Delivery\Security\TokenAuthenticator
+        parent: lexik_jwt_authentication.security.jwt_authenticator
+        autowire: true

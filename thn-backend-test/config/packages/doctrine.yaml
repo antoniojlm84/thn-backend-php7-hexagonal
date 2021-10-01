@@ -1,0 +1,51 @@
+doctrine:
+    dbal:
+        dbname: '%env(resolve:DATABASE_NAME)%'
+        host: '%env(resolve:DATABASE_HOST)%'
+        port: '%env(resolve:DATABASE_PORT)%'
+        user: '%env(resolve:DATABASE_USER)%'
+        password: '%env(resolve:DATABASE_PASSWORD)%'
+        server_version: '%env(resolve:DATABASE_SERVER_VERSION)%'
+        charset: UTF8
+        options:
+            1002: "SET NAMES 'UTF8' COLLATE 'utf8_unicode_ci'"
+        types:
+            client_id: Thn\BackendTest\Infrastructure\Persistence\Doctrine\Type\ClientIdType
+            hotel_id: Thn\BackendTest\Infrastructure\Persistence\Doctrine\Type\HotelIdType
+            room_id: Thn\BackendTest\Infrastructure\Persistence\Doctrine\Type\RoomIdType
+            user_id: Thn\BackendTest\Infrastructure\Persistence\Doctrine\Type\UserIdType
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            Client:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mappings/client'
+                prefix: 'Thn\BackendTest\Domain\Model\Client'
+            CountryIso:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mappings/country'
+                prefix: 'Thn\BackendTest\Domain\Model\Country'
+            Email:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mappings/email'
+                prefix: 'Thn\BackendTest\Domain\Model\Email'
+            Hotel:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mappings/hotel'
+                prefix: 'Thn\BackendTest\Domain\Model\Hotel'
+            Room:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mappings/room'
+                prefix: 'Thn\BackendTest\Domain\Model\Room'
+            User:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mappings/user'
+                prefix: 'Thn\BackendTest\Domain\Model\User'

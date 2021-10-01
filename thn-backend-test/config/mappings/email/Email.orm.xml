@@ -1,0 +1,5 @@
+<doctrine-mapping>
+    <embeddable name="Thn\BackendTest\Domain\Model\Email\Email">
+        <field name="value" type="string"/>
+    </embeddable>
+</doctrine-mapping>

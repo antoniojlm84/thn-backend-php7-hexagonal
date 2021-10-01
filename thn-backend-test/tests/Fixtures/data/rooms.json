@@ -1,0 +1,44 @@
+[
+	{
+		"id":"f0278273-2b2d-44ea-a23a-bad5d9db8562",
+		"number":"Room 1",
+		"floor":"Floor 1",
+		"description": "Standard double room"
+	},
+	{
+		"id":"8c2fc409-012f-41d7-8808-4506f21565bc",
+		"number":"Room 2",
+		"floor":"Floor 2",
+		"description": "Standard twin room"
+	},
+	{
+		"id":"8bcb3af2-8c60-40a5-9473-509230108783",
+		"number":"Room 3",
+		"floor":"Floor 3",
+		"description": "Standard triple room"
+	},
+	{
+		"id":"6dc869f4-4fe4-4969-838d-906863c2ba57",
+		"number":"Room 4",
+		"floor":"Floor 4",
+		"description": "Deluxe double room"
+	},
+	{
+		"id":"98371c83-d446-453b-a3b9-2971b1bf366d",
+		"number":"Room 1",
+		"floor":"Floor 1",
+		"description": "Standard single room"
+	},
+	{
+		"id":"04430881-2657-4f2f-b52a-15622d95f7ee",
+		"number":"Room 1",
+		"floor":"Floor 1",
+		"description": "Deluxe double room"
+	},
+	{
+		"id":"8048ab23-1e83-4e4a-a331-1aab7b7db184",
+		"number":"Room 2",
+		"floor":"Floor 2",
+		"description": "Superior double room"
+	}
+]

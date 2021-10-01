@@ -1,0 +1,19 @@
+<doctrine-mapping>
+    <entity name="Thn\BackendTest\Domain\Model\Room\Room">
+        <id name="id" type="room_id">
+            <generator strategy="NONE" />
+        </id>
+        <embedded name="roomNumber" class="RoomNumber" />
+        <embedded name="floor" class="RoomFloor" />
+        <embedded name="description" class="RoomDescription" />
+
+        <field name="deleted" type="boolean">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        <field name="deletedAt" type="datetime_immutable" nullable="true" />
+        <field name="createdAt" type="datetime_immutable" nullable="false" />
+        <field name="updatedAt" type="datetime_immutable" nullable="true" />
+    </entity>
+</doctrine-mapping>

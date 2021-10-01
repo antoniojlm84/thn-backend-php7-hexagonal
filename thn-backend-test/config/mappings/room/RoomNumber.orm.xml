@@ -1,0 +1,5 @@
+<doctrine-mapping>
+    <embeddable name="Thn\BackendTest\Domain\Model\Room\RoomNumber">
+        <field name="value" type="string" />
+    </embeddable>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+get_hotel_rooms_list:
+  methods:
+    - GET
+  path: /api/hotels/rooms
+  controller: Thn\BackendTest\Infrastructure\Delivery\Action\Hotel\GetHotelRoomsAction
+
+get_hotel:
+    methods:
+       - GET
+    path: /api/hotels/{hotelId}
+    controller: Thn\BackendTest\Infrastructure\Delivery\Action\Hotel\GetHotelAction

@@ -1,0 +1,30 @@
+security:
+    enable_authenticator_manager: true
+
+    providers:
+        app_user_provider:
+            entity:
+                class: Test\Infrastructure\Delivery\Security\UserProvider
+                property: email
+
+    encoders:
+        App\Security\User\User: auto
+        Symfony\Component\Security\Core\User\User: auto
+
+    role_hierarchy:
+        ROLE_ADMIN:   ROLE_USER
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        api:
+            pattern: ^/api
+            stateless: true
+            jwt:
+                authenticator: thn.custom_authenticator
+
+    access_control:
+        - { path: ^/api/token, roles: PUBLIC_ACCESS }
+        - { path: ^/api, roles: ROLE_ADMIN }
+        - { path: ^/, roles: PUBLIC_ACCESS }

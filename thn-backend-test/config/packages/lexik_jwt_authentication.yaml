@@ -1,0 +1,11 @@
+lexik_jwt_authentication:
+    secret_key: '%kernel.project_dir%/%env(resolve:JWT_PRIVATE_KEY_PATH)%' # darle permisos chmod 644 private.pem en var/jwt
+    public_key: '%kernel.project_dir%/%env(resolve:JWT_PUBLIC_KEY_PATH)%'
+    pass_phrase: '%env(JWT_PASSPHRASE)%'
+    token_ttl:  172800 # 48 horas
+    token_extractors:
+        # look for a token as Authorization Header
+        authorization_header:
+            enabled: true
+            prefix: Bearer
+            name: auth

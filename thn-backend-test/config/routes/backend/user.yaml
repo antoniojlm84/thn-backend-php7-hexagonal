@@ -1,0 +1,18 @@
+login_user:
+    path: /api/token
+    controller: Thn\BackendTest\Infrastructure\Delivery\Action\User\LoginAction
+    methods:
+        - POST
+
+
+#get_user:
+#    methods:
+#        - GET
+ #   path: /users/{userId}
+#    controller: SunMedia\Core\Infrastructure\Delivery\Action\Management\V1\User\GetUserAction
+
+#get_user_list:
+#    methods:
+ #       - GET
+#    path: /users
+#    controller: SunMedia\Core\Infrastructure\Delivery\Action\Management\V1\User\GetUserListAction

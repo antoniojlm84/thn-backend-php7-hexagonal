@@ -1,0 +1,68 @@
+version: '3.7'
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: docker/webserver/Dockerfile
+    working_dir: /var/www
+    volumes:
+      #Logs
+      - ./docker/log/applications:/var/log
+      #Xdebug
+      - ./docker/log/xdebug.log:/home/application/xdebug.log
+      #Sources
+      #- ./.git:/var/www/.git
+      - ./thn-backend-test:/var/www/thn-backend-test
+      #Virtual Hosts
+      - ./docker/webserver/vhosts/vhost.conf:/opt/docker/etc/httpd/vhost.conf
+      - ./docker/webserver/vhosts/thn_backend_test.conf:/opt/docker/etc/httpd/vhost.common.d/thn-backend-test.conf
+    environment:
+      - php.xdebug.default_enable=On
+      - php.xdebug.remote_enable=On
+      - XDEBUG_MODE=develop,debug
+      - XDEBUG_CLIENT_HOST=${THN_XDEBUG_REMOTE_HOST}
+      - XDEBUG_CLIENT_PORT=${THN_XDEBUG_REMOTE_PORT}
+      - XDEBUG_IDE_KEY=PHPSTORM
+      - XDEBUG_SESSION=PHPSTORM
+      - XDEBUG_START_WITH_REQUEST=yes
+      - php.xdebug.remote_handler=dbgp
+      - php.xdebug.remote_log="/home/application/xdebug.log"
+      - php.xdebug.max_nesting_level=1256
+      - PHP_DEBUGGER=xdebug
+      - PHP_IDE_CONFIG=serverName=thn_backend_test.local
+      - COMPOSER_MEMORY_LIMIT=-1
+      - COMPOSER=composer.json
+    extra_hosts:
+      - thn-backend-test.local:127.0.0.1
+    links:
+      - database
+    ports:
+      - 80:80
+      - 443:443
+      - 9001:9001
+    networks:
+      back-network:
+        ipv4_address: 172.192.0.2
+
+  database:
+    image: mysql:8.0.19
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - /var/lib/mysql
+      - ./docker/database/bootstrap:/docker-entrypoint-initdb.d
+      - ./docker/database/config.cnf:/etc/mysql/conf.d/config.cnf
+      - ./docker/database/log/general.log:/var/log/mysql/general.log
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      back-network:
+        ipv4_address: 172.192.0.4
+
+networks:
+  back-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.192.0.0/16

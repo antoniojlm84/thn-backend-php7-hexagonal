@@ -1,0 +1,6 @@
+<doctrine-mapping>
+    <entity name="Thn\BackendTest\Domain\Model\Hotel\HotelRoom">
+        <id name="hotelId" type="hotel_id" />
+        <id name="roomId" type="room_id" />
+    </entity>
+</doctrine-mapping>

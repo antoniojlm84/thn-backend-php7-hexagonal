@@ -1,0 +1,21 @@
+[
+	{
+		"id":"ea798907-bcae-431a-b44d-86e718d562bf",
+		"name":"Client 1",
+		"email":"client1@company.es",
+		"countryIso": "ES",
+		"clientRoomsData": [
+			"6dc869f4-4fe4-4969-838d-906863c2ba57",
+			"8bcb3af2-8c60-40a5-9473-509230108783"
+		]
+	},
+	{
+		"id":"f6cf6ada-bce7-42c1-bb39-83dd552ca375",
+		"name":"Client 2",
+		"email":"client2@company.es",
+		"countryIso": "US",
+		"clientRoomsData": [
+			"8048ab23-1e83-4e4a-a331-1aab7b7db184"
+		]
+	}
+]
